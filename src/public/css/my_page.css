@@ -1,0 +1,187 @@
+.my_page{
+    margin: 20px 60px;
+}
+
+.name{
+    text-align: center;
+    font-size: 32px;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+}
+
+.content__left{
+    text-align: left;
+    margin-right: 100px;
+}
+
+.content-heading{
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.reserved {
+    margin-top: 30px;
+    padding: 30px;
+    width: 400px;
+    height: 350px;
+    background-color: #3860fd;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.reserved-table__heading{
+    width: 100%;
+    height: 30px;
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete_btn{
+    background: #3860fd;
+    border: none;
+}
+
+.img__delete{
+    width: 20px;
+    height: 20px;
+}
+
+.reserved-table {
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+}
+
+.reserved-table-num{
+    margin: 5px 0;
+    padding-left: 50px;
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+}
+
+.reserved-table-num::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: url(../img/clock.svg) no-repeat center center /auto 100%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 5px;
+}
+
+.reserved-table__row{
+    width: 100%;
+    height: 20px;
+}
+
+.reserved-table__label {
+    width: 100px;
+    height: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.reserved-table__data {
+    height: 20px;
+    font-size: 16px;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.content__right{
+    width: 700px;
+    margin-right: 0;
+    padding-top: 0;
+}
+
+.favorite-list{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.shop-card{
+    float: left;
+    width: 270px;
+    height: 270px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 2px 2px 1px #464545a4;
+    background: #fff;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.shop-img{
+    width: 100%;
+    height: 55%;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__content{
+    padding: 0px 25px;
+}
+
+.shop-name{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.card__tag{
+    height: 20px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.tag{
+    margin-top: 0;
+    display:inline-block;
+}
+
+.shop__actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.shop__detail{
+    width: 80px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.detail{
+    padding-top: 3px;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    background: #315aff;
+    border-radius: 3px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.favorite-btn {
+    border: none;
+    background: #fff;
+}
+
+.favorite__img{
+    width: 25px;
+    height: 25px;
+}

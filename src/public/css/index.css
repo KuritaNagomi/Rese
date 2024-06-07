@@ -1,0 +1,160 @@
+.search-bar{
+    margin: auto 0;
+}
+
+.search-form{
+    padding: 5px 2px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 3px;
+    width: 380px;
+    height: 30px;
+    border-radius: 3px;
+    background: #fff;
+}
+
+.search-form__select{
+
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
+    border-right: 1px solid #aeaeae;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    line-height: 20px;
+}
+
+.select{
+    padding-left: 5px;
+    width: 100%;
+    height: 100%;
+    border:none;
+    color: #aeaeae;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("../img/select.svg");
+    background-repeat: no-repeat;
+    background-size: 16px 12px;
+    background-position: right 5px center;
+
+}
+
+.search-box{
+    display: inline-block;
+    position: relative;
+}
+
+.search-box::before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: url(../img/search.png) no-repeat center center /auto 100%;
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    left: 5px;
+}
+
+.search-keyword{
+    padding: 3px 0 3px 2em;
+    border: none;
+    background: #fff;
+    color: #aeaeae;
+}
+
+.search-btn{
+    width: 50px;
+    height: 20px;
+    background: #fff;
+    color: #aeaeae;
+    border: none;
+    border-left: 1px solid #aeaeae;
+}
+
+.shop_all{
+    margin: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.shop-card{
+    width: 270px;
+    height: 270px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 2px 2px 1px #464545a4;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.shop-img{
+    width: 100%;
+    height: 55%;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__content{
+    padding: 0px 25px;
+}
+
+.shop-name{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.card__tag{
+    height: 20px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.tag{
+    margin-top: 0;
+    display:inline-block;
+}
+
+.shop__actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.shop__detail{
+    width: 80px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.detail{
+    padding-top: 3px;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    background: #315aff;
+    border-radius: 3px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.favorite-btn{
+    border: none;
+    background: #fff;
+}
+
+.favorite__img{
+    width: 25px;
+    height: 25px;
+}

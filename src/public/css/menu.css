@@ -1,0 +1,32 @@
+.body{
+    background: #fff;
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+    height: 70vh;
+}
+
+.link{
+    text-decoration: none;
+    font-size: 32px;
+    color: #315aff;
+}
+.nav-item{
+    list-style: none;
+    font-size: 32px;
+    color: #315aff;
+}
+
+
+.logout-btn{
+    background: #fff;
+    border: none;
+    font-size: 32px;
+    color: #315aff;
+}

@@ -76,14 +76,15 @@
 .shop_all{
     margin: 20px 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 10px;
+    row-gap: 30px;
+    column-gap: 30px;
 }
 
 .shop-card{
-    width: 270px;
-    height: 270px;
+    width: 30%;
+    height: auto;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 2px 2px 1px #464545a4;
@@ -157,4 +158,34 @@
 .favorite__img{
     width: 25px;
     height: 25px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .search-bar{
+        width: 300px;
+    }
+
+    .search-form{
+        width: 100%;
+    }
+
+    .search-box{
+        width: 30%;
+    }
+
+    .search-keyword{
+        width: 100%;
+    }
+
+    .shop_all{
+        margin-top: 60px;
+        flex: 1 1 100%;
+    }
+
+    .shop-card {
+        width: 80%;
+        max-height: 300px;
+    }
+
 }

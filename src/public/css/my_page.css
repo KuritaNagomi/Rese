@@ -26,7 +26,6 @@
     margin-top: 30px;
     padding: 30px;
     width: 400px;
-    height: 350px;
     background-color: #3860fd;
     border-radius: 5px;
     color: #fff;
@@ -38,6 +37,19 @@
     padding-top: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.reservation__action {
+    display: flex;
+    align-items: center;
+}
+
+.edit{
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
 }
 
 .delete_btn{
@@ -76,22 +88,36 @@
 }
 
 .reserved-table__row{
+    margin-top: 20px;
+    display: inline-block;
     width: 100%;
-    height: 20px;
+    height: 30px;
 }
 
 .reserved-table__label {
-    width: 100px;
+    width: 30%;
     height: 20px;
     font-size: 16px;
     box-sizing: border-box;
 }
 
 .reserved-table__data {
+    padding-left: 20px;
+    width: 70%;
     height: 20px;
     font-size: 16px;
     color: #fff;
     box-sizing: border-box;
+}
+
+.review__link{
+    margin-top: 0;
+    text-align: right;
+}
+
+.review{
+    text-decoration: none;
+    color: #fff;
 }
 
 .content__right{
@@ -184,4 +210,34 @@
 .favorite__img{
     width: 25px;
     height: 25px;
+}
+
+@media screen and (max-width: 768px){
+
+    .my_page{
+        width: 100%;
+    }
+
+    .content{
+        display: block;
+        margin-left: 0;
+        margin-right: 30px;
+    }
+
+    .content__left{
+        width: 100%;
+        margin: 0;
+        flex: 1 1 100%;
+    }
+
+    .reserved{
+        width: 90%;
+    }
+    .content__right{
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+
+
 }

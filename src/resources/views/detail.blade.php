@@ -46,6 +46,11 @@
                         <input type="hidden" name="shop_id" value="{{ $shop->id }}">
                         <div class="form-group">
                             <input type="date" id="date" name="date" class="form-input" placeholder="予約日">
+                            <p class="error-message">
+                                @error('date')
+                                {{ $message }}
+                                @enderror
+                            </p>
                         </div>
                         <div class="form-group">
                             <select name="time" class="select">
@@ -60,6 +65,11 @@
                                 <option>20:30</option>
                                 <option>21:00</option>
                             </select>
+                            <p class="error-message">
+                                @error('time')
+                                {{ $message }}
+                                @enderror
+                            </p>
                         </div>
                         <div class="form-group">
                             <select name="num_of_users" class="select">
@@ -73,6 +83,11 @@
                                 <option value="7">7名</option>
                                 <option value="8">8名</option>
                             </select>
+                            <p class="error-message">
+                                @error('num_of_users')
+                                {{ $message }}
+                                @enderror
+                            </p>
                         </div>
                         <div class="confirm">
                             <table class="confirm-table">
@@ -99,6 +114,35 @@
                         </div>
                     </form>
                 </div>
+            </div>
+            <div class="reviews">
+                <h4 class="reviews__heading">レビュー</h4>
+                @foreach($shop->reviews as $review)
+                <div class="review-box">
+                    <div class="review-group">
+                        <label for="date" class="label">投稿日:</label>
+                        <p class="date">{{ $review->created_at->format('Y-m-d') }}</p>
+                    </div>
+                    <div class="review-group">
+                        <div class="rating">
+                            @if($review->rating == 1)
+                            ⭐️
+                            @elseif($review->rating == 2)
+                            ⭐️⭐️
+                            @elseif($review->rating == 3)
+                            ⭐️⭐️⭐️
+                            @elseif($review->rating == 4)
+                            ⭐️⭐️⭐️⭐️
+                            @else
+                            ⭐️⭐️⭐️⭐️⭐️
+                            @endif
+                        </div>
+                    </div>
+                    <div class="review-group">
+                        <div class="comment">{{ $review->comment }}</div>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </main>
     </div>

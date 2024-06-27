@@ -65,3 +65,25 @@ header__right{
     display: flex;
     align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+
+    .header{
+        position: sticky;
+        padding: 20px;
+        margin: 0;
+        text-align: left;
+        display: block;
+        height: 100px;
+    }
+
+    .header__left{
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .header__right{
+        text-align: left;
+        margin-bottom: 60px;
+    }
+}

@@ -8,23 +8,31 @@
     <div class="my_page">
         <div class="content-heading">
             <h2 class="name"><?php $user = Auth::user(); ?>{{ $user->name }}さん</h2>
+            @if (session('message'))
+            <div class="alert-success">
+                {{ session('message') }}
+            </div>
+            @endif
         </div>
         <div class="content">
             <div class="content__left">
                 <h3 class="content-heading">予約状況</h3>
                 @foreach($reservations as $index => $reservation)
                 <div class="reserved">
-                    <table class="reserved-table">
-                        <div class="reserved-table__heading">
-                            <h5 class="reserved-table-num">予約{{ $index + 1}}</h5>
+                    <div class="reserved-table__heading">
+                        <h5 class="reserved-table-num">予約{{ $index + 1}}</h5>
+                        <div class="reservation__action">
+                            <a href="{{ route('reservations.edit', $reservation->id) }}" class="edit">変更</a>
                             <form action="{{ route('delete', $reservation->id)}}" method="post" class="delete">
-                                @csrf
-                                @method('DELETE')
+                            @csrf
+                            @method('DELETE')
                                 <button class="delete_btn" type="submit">
                                     <img class="img__delete" src="{{ asset('img/delete.png' )}}" alt="削除">
                                 </button>
                             </form>
                         </div>
+                    </div>
+                    <table class="reserved-table">
                         <tr class="reserved-table__row">
                             <th class="reserved-table__label">Shop</th>
                             <td class="reserved-table__data">{{ $reservation->shop->name }}</td>
@@ -42,6 +50,11 @@
                             <td class="reserved-table__data">{{ $reservation->num_of_users }}人</td>
                         </tr>
                     </table>
+                    @if(\Carbon\Carbon::now()->gt(\Carbon\Carbon::parse($reservation->start_at)))
+                    <div class="review__link">
+                            <a href="{{ route('reviews.create', $reservation->id) }}" class="review">レビューを投稿</a>
+                    </div>
+                    @endif
                 </div>
                 @endforeach
             </div>

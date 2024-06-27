@@ -1,0 +1,50 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.heading__ttl{
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.review__form{
+    width: 400px;
+    height: auto;
+    background: #315aff;
+    padding:20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px #464545a4;
+}
+.review__edit{
+    text-align: left;
+}
+
+.form-group{
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.rating{
+    margin-left: 32px;
+    border: none;
+    border-radius: 3px;
+}
+
+.textarea{
+    border: none;
+    border-radius: 3px;
+}
+.submit-btn{
+    text-align: right;
+}
+
+.submit{
+    border: none;
+    background: #fff;
+    border-radius: 3px;
+    color: #315aff;;
+}

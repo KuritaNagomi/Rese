@@ -13,7 +13,7 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $shops = Shop::with(['area', 'genre'])->get();
+        $shops = Shop::with(['area', 'genre', 'reviews'])->get();
         $areas = Area::all();
         $genres = Genre::all();
 

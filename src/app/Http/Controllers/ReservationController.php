@@ -10,7 +10,7 @@ use App\Models\Shop;
 
 class ReservationController extends Controller
 {
-    public function confirm(Request $request)
+    public function confirm(ReservationRequest $request)
     {
         if (!Auth::check()){
             return redirect()->route('login');
@@ -47,6 +47,42 @@ class ReservationController extends Controller
         return view('done');
     }
 
+    public function edit($id)
+    {
+        $reservation = Reservation::findOrFail($id);
+
+        if ($reservation->user_id != Auth::id()){
+            return redirect()->route('my_page');
+        }
+
+        $shop_id = $reservation['shop_id'];
+
+        $shop = Shop::with(['area', 'genre'])->findOrFail($shop_id);
+
+        return view('edit', compact('reservation', 'shop'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $reservation = Reservation::findOrFail($id);
+
+        if ($reservation->user_id != Auth::id()){
+            return redirect()->route('my_page');
+        }
+
+        $date = $request->input('date');
+        $time = $request->input('time');
+
+        $startAt = $date . ' ' . $time;
+
+        $reservation->update([
+            'start_at' => $startAt,
+            'num_of_users' => $request->input('num_of_users'),
+        ]);
+
+        return redirect()->route('my_page');
+
+    }
     public function destroy(Request $request)
     {
         Reservation::find($request->id)->delete();

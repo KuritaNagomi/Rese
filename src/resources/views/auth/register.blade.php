@@ -9,7 +9,7 @@
     <div class="register-form__box">
         <h2 class="register-form__heading">Registration</h2>
         <div class="register-form__inner">
-            <form action="/register" method="post" class="register-form__form">
+            <form action="{{ route('register.store') }}" method="post" class="register-form__form">
                 @csrf
                 <div class="register-form__group">
                     <div class="input__group">
@@ -45,6 +45,7 @@
                         </p>
                 </div>
                 <div class="register">
+                    <input type="hidden" name="role" value="user">
                     <input type="submit" class="register-form__btn" value="登録">
                 </div>
             </form>

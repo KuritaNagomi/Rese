@@ -22,7 +22,7 @@
         </div>
         <div class="header__right">@yield('search')</div>
     </header>
-    <main>
+    <main class="main">
         @yield('content')
     </main>
 </body>

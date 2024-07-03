@@ -32,6 +32,8 @@ Route::middleware(['auth', 'role:shop_manager'])->group (function(){
     Route::get('/shop_manager', [ShopManagerController::class, 'index'])->name('shop_manager.index');
     Route::post('shops/store', [ShopManagerController::class, 'store'])->name('shops.store');
     Route::put('/shop/{id}', [ShopManagerController::class, 'update'])->name('shop.update');
+    Route::get('/email/form/{userId}',[ShopManagerController::class, 'showForm'])->name('email_form');
+    Route::post('/email/send/{userId}', [ShopManagerController::class, 'sendEmail'])->name('send_email');
 });
 
 

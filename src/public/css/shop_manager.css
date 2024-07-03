@@ -89,6 +89,16 @@
     box-sizing: border-box;
 }
 
+.email{
+    text-align: right;
+}
+
+.email-btn{
+    margin-left: 0;
+    text-decoration: none;
+    color: #fff;
+}
+
 .label{
     margin-right: 15px;
     font-size: 14px;

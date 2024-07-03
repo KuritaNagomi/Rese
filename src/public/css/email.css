@@ -1,0 +1,23 @@
+.send_email{
+    margin-left: 50px;
+}
+
+.label{
+    color: #315aff;
+}
+
+.form-control{
+    border: none;
+    border-radius: 3px;
+}
+
+.send-btn{
+    margin-top: 20px;
+}
+
+.btn{
+    border: none;
+    border-radius: 3px;
+    background: #315aff;
+    color: #fff;
+}

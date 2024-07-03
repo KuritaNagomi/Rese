@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CustomEmail;
 use App\Models\Shop;
 use App\Models\Genre;
 use App\Models\Area;
 use App\Models\Reservation;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ShopManagerController extends Controller
 {
@@ -81,6 +84,27 @@ class ShopManagerController extends Controller
         $shop->save();
 
         return redirect()->route('shop_manager.index')->with('message', '店舗情報が更新されました');
+    }
+
+    public function showForm($userId)
+    {
+        $user = User::findOrFail($userId);
+        return view('admin.email', compact('user'));
+    }
+
+    public function sendEmail(Request $request, $userId)
+    {
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string',
+        ]);
+
+        $user = User::findOrFail($userId);
+
+        \Mail::to($user->email)->send(new CustomEmail($request->input('subject'), $request->input('message')));
+
+        return redirect()->route('shop_manager.index')->with('message', 'メールを送信しました');
     }
 
 }

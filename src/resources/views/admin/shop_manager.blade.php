@@ -44,6 +44,9 @@
                             <td class="reserved-table__data">{{ $reservation->num_of_users }}人</td>
                         </tr>
                     </table>
+                    <div class="email">
+                        <a href="{{ route('email_form', ['userId' => $reservation->user->id]) }}" class="email-btn">メールを送信</a>
+                    </div>
                 </div>
                 @endforeach
             </div>

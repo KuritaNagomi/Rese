@@ -50,9 +50,13 @@
                             <td class="reserved-table__data">{{ $reservation->num_of_users }}人</td>
                         </tr>
                     </table>
+                    <div class="qr-code">
+                        <a href="{{ route('qrcode', $reservation->id)}}" class="qr-code__link">QRコード表示</a>
+                    </div>
                     @if(\Carbon\Carbon::now()->gt(\Carbon\Carbon::parse($reservation->start_at)))
                     <div class="review__link">
                             <a href="{{ route('reviews.create', $reservation->id) }}" class="review">レビューを投稿</a>
+                            <a href="{{ route('payment.form') }}" class="review">支払い</a>
                     </div>
                     @endif
                 </div>

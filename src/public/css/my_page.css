@@ -120,6 +120,15 @@
     color: #fff;
 }
 
+.qr-code{
+    margin-top: 15px;
+}
+
+.qr-code__link{
+    text-decoration: none;
+    color: #fff;
+}
+
 .content__right{
     width: 700px;
     margin-right: 0;

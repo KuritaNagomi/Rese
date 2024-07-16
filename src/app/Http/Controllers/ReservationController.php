@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Http\Requests\ReservationRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Reservation;
+use App\Models\User;
 use App\Models\Shop;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+
 
 class ReservationController extends Controller
 {
@@ -83,10 +87,34 @@ class ReservationController extends Controller
         return redirect()->route('my_page');
 
     }
+
     public function destroy(Request $request)
     {
         Reservation::find($request->id)->delete();
 
         return redirect('my_page');
     }
+
+    public function show($id)
+    {
+        $reservation = Reservation::with('user', 'shop')->findOrFail($id);
+
+        $shopName = $reservation->shop->name;
+        $userName = $reservation->user->name;
+        $startTime = $reservation->start_at;
+        $numOfUsers = $reservation->num_of_users;
+
+        $qrCodeContent = "Reservation ID: $id\nShop: $shopName\nUser: $userName\nStart Time: $startTime\nNumber of Users: $numOfUsers";
+        $qrCode = QrCode::encoding('UTF-8')->size(400)->generate($qrCodeContent);
+
+        return view('reservations.show_qr', [
+            'qrCode' => $qrCode,
+            'reservation' => $reservation,
+            'shopName' => $shopName,
+            'userName' => $userName,
+            'startTime' => $startTime,
+            'numOfUsers' => $numOfUsers,
+        ]);
+    }
+
 }

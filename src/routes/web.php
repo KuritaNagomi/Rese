@@ -13,6 +13,7 @@ use Laravel\Fortify\Http\Controllers\EmailVerificationPromptController;
 use Laravel\Fortify\Http\Controllers\EmailVerificationNotificationController;
 use Laravel\Fortify\Http\Controllers\VerifyEmailController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\PaymentController;
 
 Route::get('/email/verify', [EmailVerificationPromptController::class, '__invoke'])->middleware(['auth'])->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke'])->middleware(['auth', 'signed'])->name('verification.verify');
@@ -57,4 +58,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/favorite/toggle', [FavoriteController::class, 'toggle']);
     Route::get('review_edit/{reservation}', [ReviewController::class, 'create'])->name('reviews.create');
     Route::post('reviews/store', [ReviewController::class, 'store'])->name('reviews.store');
+    Route::get('/reservations/{id}/qrcode', [ReservationController::class, 'show'])->name('qrcode');
+    Route::get('payment', [PaymentController::class, 'showPaymentForm'])->name('payment.form');
+    Route::post('payment/charge', [PaymentController::class, 'charge'])->name('payment.charge');
 });

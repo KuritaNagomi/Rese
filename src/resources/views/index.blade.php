@@ -58,7 +58,7 @@
                         @csrf
                         <input type="hidden" name="shop_id" value="{{ $shop->id }}">
                         <button class="favorite-btn">
-                            @if(in_array($shop->id, $favorite))
+                            @if(isset($favoriteShops) && in_array($shop->id, $favoriteShops))
                                 <img src="img/heart-red.png" alt="heart" class="favorite__img">
                             @else
                                 <img src="img/heart.png" alt="heart" class="favorite__img">

@@ -17,15 +17,15 @@ class ShopController extends Controller
         $areas = Area::all();
         $genres = Genre::all();
 
-        $favorite = [];
+        $favoriteShops = [];
         if(Auth::check()){
-            $user = Auth::user();
-            $favorite = $user->favorites()->pluck('shop_id')->toArray();
+            $userId = Auth::id();
+            $favoriteShops = Favorite::where('user_id', $userId)->pluck('shop_id')->toArray();
         } else {
-            $favorite = [];
+            $favoriteShops = [];
         }
 
-        return view('index', compact('shops', 'areas', 'genres', 'favorite'));
+        return view('index', compact('shops', 'areas', 'genres', 'favoriteShops'));
     }
 
     public function search(Request $request)

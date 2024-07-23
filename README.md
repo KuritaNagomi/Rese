@@ -30,7 +30,7 @@ http://52.197.169.191/admin/register
 
 ## 環境構築　Dockerビルド
 
-git clone git@github.com:KuritaNagomi/beginner-exercises20240510.git
+git clone git@github.com:KuritaNagomi/Rese.git
 
 docker-compose up -d --build
 

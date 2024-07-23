@@ -100,6 +100,7 @@
                     <button type="submit" class="btn">登録</button>
                 </form>
                 <h5 class="shop-edit_heading">店舗情報の編集</h5>
+                @if($shop)
                 <div class="shop-edit">
                     <form action="{{ route('shop.update', ['id' => $shop->id]) }}" method="post" enctype="multipart/form-data">
                         @csrf
@@ -151,6 +152,9 @@
                     <button type="submit" class="btn">更新</button>
                     </form>
                 </div>
+                @else
+                    <p>店舗情報がありません</p>
+                @endif
             </div>
         </div>
     </div>
